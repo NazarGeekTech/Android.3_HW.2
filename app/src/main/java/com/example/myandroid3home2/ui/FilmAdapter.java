@@ -1,7 +1,5 @@
 package com.example.myandroid3home2.ui;
 
-import android.content.Context;
-import android.location.GpsStatus;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +69,8 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
     public interface Listenerr{
         void onClickfilm(String id);
     }
+
+
 }
 
 

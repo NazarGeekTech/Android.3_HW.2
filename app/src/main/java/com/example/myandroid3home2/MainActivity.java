@@ -1,24 +1,19 @@
-package com.example.myandroid3home2.ui;
+package com.example.myandroid3home2;
 
-import androidx.appcompat.app.ActionBar;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Adapter;
 import android.widget.Toast;
 
-import com.example.myandroid3home2.R;
 import com.example.myandroid3home2.data.remote.RetrofitFactory;
 import com.example.myandroid3home2.model.Film;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.myandroid3home2.ui.FilmAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -49,6 +44,21 @@ public class MainActivity extends AppCompatActivity implements FilmAdapter.Liste
     }
 
     private void lodFilm() {
+//        RetrofitFactory
+//                .getInstance()
+//                .getFilm("ebbb6b7c-945c-41ee-a792-de0e43191bd8")
+//                .enqueue(new Callback<Film>() {
+//                    @Override
+//                    public void onResponse(Call<Film> call, Response<Film> response) {
+//                        if (response.isSuccessful() && response.body() !=null) {
+//                            Log.d("tag", response.body().getTitle());
+//                        }
+//                    }
+//                    @Override
+//                    public void onFailure(Call<Film> call, Throwable t) {
+//                        Log.d("tag", t.getLocalizedMessage());
+//                    }
+//                });
         RetrofitFactory
                 .getInstance()
                 .getFilms()
@@ -70,14 +80,19 @@ public class MainActivity extends AppCompatActivity implements FilmAdapter.Liste
                 });
     }
 
+
     @Override
     public void onClickfilm(String id) {
         Intent intent = new Intent(MainActivity.this, MyBasaDan.class);
         intent.putExtra("kay",id);
+
         startActivity(intent);
-        Toast.makeText(this, "add" , Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(this, "list" , Toast.LENGTH_SHORT).show();
 
     }
+
+
 }
 
 

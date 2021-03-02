@@ -1,16 +1,17 @@
-package com.example.myandroid3home2.ui;
+package com.example.myandroid3home2;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.myandroid3home2.R;
 import com.example.myandroid3home2.data.remote.RetrofitFactory;
 import com.example.myandroid3home2.model.Film;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 public class MyBasaDan extends AppCompatActivity {
     private String id;
@@ -24,12 +25,12 @@ public class MyBasaDan extends AppCompatActivity {
 
         Intent intent = getIntent();
         id = intent.getStringExtra("kay");
-        Toast.makeText(this, "Garila " + id, Toast.LENGTH_SHORT).show();
+        Toast.makeText(MyBasaDan.this, "id" + id, Toast.LENGTH_SHORT).show();
         getFilmId();
     }
 
     private void init() {
-        title = findViewById(R.id.tile_film);
+        title = findViewById(R.id.title_film);
         description = findViewById(R.id.description_film);
         producer = findViewById(R.id.producer_film);
         people = findViewById(R.id.people_film);

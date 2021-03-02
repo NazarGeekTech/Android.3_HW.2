@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.MyBasaDan">
+    tools:context=".MyBasaDan">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tile_film"
+        android:id="@+id/title_film"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -39,5 +43,8 @@
         android:text="people"
         android:textSize="25sp"/>
 
-
 </LinearLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>
